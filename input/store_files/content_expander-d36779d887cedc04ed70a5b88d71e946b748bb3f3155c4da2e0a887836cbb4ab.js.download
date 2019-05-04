@@ -1,0 +1,1 @@
+!function(){"use strict";window.jQuery&&$(".expandable__container").length&&$(".js-content-expand-link").not("[data-expandable-on]").attr("data-expandable-on",!0).click(function(t){t.preventDefault();var e=$(t.currentTarget).data("target"),n=$('.expandable__container[data-content="'+e+'"]');n.slideToggle(),$(t.currentTarget).find(".js-content-expand-text").toggle()})}();

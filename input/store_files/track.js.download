@@ -1,0 +1,15 @@
+(function () {
+    var queue = window['friendbuy'];
+    if (queue.track_callback) {
+        queue.track_callback({
+            store_host: "site-f15753fd-teespring.com",
+            embed_load_code: "20190503153950320b1b1596"
+        });
+    }
+
+    var uuid = '080307540553550e1a025206511a010654061a540155511a500306520704055505040701';
+    if (queue.set_fbuy_cookie && uuid) {
+        queue.set_fbuy_cookie(uuid);
+    }
+
+})();
