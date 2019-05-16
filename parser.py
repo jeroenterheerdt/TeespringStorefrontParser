@@ -1,5 +1,6 @@
 from pyquery import PyQuery   
 import requests
+import json
 InputFile = "input/store.html"
  
 
@@ -59,7 +60,7 @@ def getProductColors(product_page_url):
 
 class Product:
 
-    def __init__(self, title, name, price, image_url, page_url, sizes, colors):
+    def __init__(self, title, name, price = None, image_url = None, page_url = None, sizes = None, colors = None):
         self.title = title
         self.name = name
         self.price = price
@@ -77,14 +78,15 @@ products = []
 for product_card in product_cards:
     product_card_pq = PyQuery(product_card)
     
-    product_image_url = getProductImageUrl(product_card_pq)
+    #product_image_url = getProductImageUrl(product_card_pq)
     product_title = getProductCardTitle(product_card_pq)
     product_name = getProductCardProductName(product_card_pq)
-    product_price = getProductCardPrice(product_card_pq)
+    #product_price = getProductCardPrice(product_card_pq)
     product_page_url = getProductCardProductPageUrl(product_card_pq)
-    sizes = getProductSizes(product_page_url)
-    colors = getProductColors(product_page_url)
-    p = Product(product_title, product_name, product_price, product_image_url, product_page_url, sizes, colors)
+    #sizes = getProductSizes(product_page_url)
+    #colors = getProductColors(product_page_url)
+    #p = Product(product_title, product_name, product_price, product_image_url, product_page_url, sizes, colors)
+    p = Product(product_title, product_name, None, None, product_page_url)
     products.append(p)
 
 print("Parsed "+str(len(products)))
